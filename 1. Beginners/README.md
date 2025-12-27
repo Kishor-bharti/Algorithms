@@ -3,13 +3,13 @@
 
 ***These test basic thinking, not tricks.***
 
-## 🔹 Searching & Basic Logic
+## 🔹 [Searching](searching.md)
 
 - Linear Search
 - Binary Search (Iterative + Recursive) ⭐
 - Two Pointer Technique (basic)
 
-## 🔹 Sorting (Elementary)
+## 🔹 [Sorting](sorting.md)
 
 - Bubble Sort (optimized) ⭐
 - Selection Sort
