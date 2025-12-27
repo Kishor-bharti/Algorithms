@@ -1,6 +1,6 @@
-## Sorting
+# Sorting
 
-1. Bubble Sort (optimised)
+### Bubble Sort (optimised)
 
 ![bubble-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/bubble-640.gif)
 
@@ -37,7 +37,7 @@ class Solution {
 //////////////////////////////////////////////
 ---
 
-2. Selection sort
+### Selection sort
 
 ![selection-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/selection-600.gif)
 
@@ -123,7 +123,7 @@ class Solution {
 ```
 //////////////////////////////////////////////
 ---
-3. Insertion sort
+### Insertion sort
 
 ![insertion-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/insertion-600.gif)
 
@@ -168,7 +168,7 @@ class Solution {
 //////////////////////////////////////////////
 ---
 
-4. Merge sort
+### Merge sort
 
 ![merge-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/merge-sort-400.gif)
 

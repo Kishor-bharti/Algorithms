@@ -2,7 +2,7 @@
 ***(This is where SDE-1 interviews live)***
 
 ## 🔹 Sorting (Core)
-- Merge Sort ⭐
+- [Merge Sort](/1.%20Beginners/sorting.md/#merge-sort) ⭐
 - Quick Sort ⭐
 - Heap Sort
 - Counting Sort
