@@ -170,9 +170,127 @@ class Solution {
 
 ### Merge sort
 
-![merge-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/merge-sort-400.gif)
+![merge-sort](https://github.com/Kishor-bharti/MD-Resources/blob/09cf86de27a1ffa8531830df5fc7730d8d1802f7/merge-sort-400.gif) (Recursive, Stable)
+
+    
+```cpp
+// Recursive & Backtracking
+class Solution {
+    public:
+        void mergeSort(Vector<int> &arr, int st, int end){
+            if(st < end){
+                int mid = st + (end - st)/2;
+
+                //Recursive call for the left half
+                mergeSort(arr, st, mid);
+
+                //Recursive call for the right half
+                mergeSort(arr, mid+1, end);
+
+                //merge arr in sorted order while Backtracking
+                merge(arr, st, mid, end);
+            }
+        }
+
+        void merge(vector<int> &arr, int st, int mid, int end){
+            vector<int> temp;
+            int i = st, j = mid+1;
+
+            while(i <= mid && j <= end){
+                if(arr[i] <= arr[j]){
+                    temp.push_back(arr[i]);
+                    i++;
+                }
+                else{
+                    temp.push_back(arr[j]);
+                    j++;
+                }
+            }
+
+            while(i <= mid){
+                temp.push_back(arr[i]);
+                i++;
+            }
+
+            while(j <= end){
+                temp.push_back(arr[j]);
+                j++;
+            }
+
+            for(int idx = 0; idx < temp.size(); idx++){
+                arr[idx + st] = temp[idx];
+            }
+        }
+};
+/*
+* Time Complexity:
+*   Best / Average / Worst Case: O(n log n)
+*
+* Space Complexity: O(n)
+*
+* Remarks:
+* - Easier to understand and implement
+* - UNSTABLE (equal elements may change order)
+* - Uses extra space
+* - Good for learning divide & conquer
+*/
+```
 
 
 ```cpp
-// merge-sort code...
+class Solution {
+  public:
+    void merge(vector<int>& arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        vector<int> L(n1), R(n2);
+
+        for(int i = 0; i < n1; ++i)
+            L[i] = arr[left + i];
+
+        for(int j = 0; j < n2; ++j)
+            R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0, k = left;
+
+        // merge the two sorted halves
+        while(i < n1 && j < n2) {
+            if(L[i] <= R[j]) {   // <= makes it stable
+                arr[k++] = L[i++];
+            } else {
+                arr[k++] = R[j++];
+            }
+        }
+
+        // copy remaining elements
+        while(i < n1) arr[k++] = L[i++];
+        while(j < n2) arr[k++] = R[j++];
+    }
+
+    void mergeSort(vector<int>& arr, int left, int right) {
+        if(left >= right) return;
+
+        int mid = left + (right - left) / 2;
+
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+};
+
+/*
+* Time Complexity:
+*   Best Case    : O(n log n)
+*   Average Case : O(n log n)
+*   Worst Case   : O(n log n)
+*
+* Space Complexity: O(n)
+*
+* Remarks:
+* - Divide and Conquer algorithm
+* - Stable sorting algorithm
+* - Not in-place (uses extra memory)
+* - Preferred when guaranteed O(n log n) time is required
+*/
 ```
